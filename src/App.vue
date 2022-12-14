@@ -1,7 +1,9 @@
 <template>
   <AppProduct />
 
-  <img alt="Vue logo" src="./assets/logo.png" />
+  {{ name }}
+
+  <img @click="changeName()" alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Welcome to Your Vue.js App" />
 </template>
 
@@ -14,6 +16,19 @@ export default {
   components: {
     HelloWorld,
     AppProduct,
+  },
+
+  setup() {
+    let name = "Dimas";
+    const changeName = () => {
+      name = "Capelari";
+      alert("chegou");
+    };
+
+    return {
+      name,
+      changeName,
+    };
   },
 };
 </script>
